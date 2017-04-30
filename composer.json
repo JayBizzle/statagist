@@ -1,0 +1,17 @@
+{
+    "name": "jaybizzle/statagist",
+    "description": "Display packagist stats",
+    "authors": [
+        {
+            "name": "Mark Beech",
+            "email": "mbeech@mark-beech.co.uk"
+        }
+    ],
+    "require": {
+        "spatie/packagist-api": "^1.0",
+        "kevinlebrun/colors.php": "^1.0"
+    },
+    "bin": {
+        "statagist"
+    }
+}

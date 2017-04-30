@@ -1,0 +1,16 @@
+{
+    "chmod": "0755",
+    "directories": [
+        "src"
+    ],
+    "output": "statagist.phar",
+    "stub": true,
+    "main": "bin/statagist",
+    "finder": [
+        {
+            "name": "*.php",
+            "exclude": ["Tests"],
+            "in": "vendor"
+        }
+    ]
+}
