@@ -11,7 +11,7 @@
         "spatie/packagist-api": "^1.0",
         "kevinlebrun/colors.php": "^1.0"
     },
-    "bin": {
+    "bin": [
         "statagist"
-    }
+    ]
 }
