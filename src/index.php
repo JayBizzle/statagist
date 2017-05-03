@@ -2,27 +2,26 @@
 
 require __DIR__.'/../vendor/autoload.php';
 
-$climate = new League\CLImate\CLImate;
+$climate = new League\CLImate\CLImate();
 
 $packagist = new \Statagist\Packagist(new \GuzzleHttp\Client());
 
 if (empty($argv[1])) {
-	die($climate->backgroundRed()->white()->output("Please specify a package name"));
+    die($climate->backgroundRed()->white()->output('Please specify a package name'));
 }
 
 try {
-	$package = $packagist->findPackageByName($argv[1]);
+    $package = $packagist->findPackageByName($argv[1]);
 
-	$climate->br()->green()->bold()->flank("{$argv[1]}");
+    $climate->br()->green()->bold()->flank("{$argv[1]}");
 
-	$climate->white()->bold()->underline()->output('Downloads');
-	$padding = $climate->padding(35);
-	$padding->label('<yellow>Today</yellow>')->result(number_format($package['package']['downloads']['daily']));
-	$padding->label('<yellow>Last 30 days</yellow>')->result(number_format($package['package']['downloads']['monthly']));
-	$padding->label('<yellow>Total</yellow>')->result(number_format($package['package']['downloads']['total']));
+    $climate->white()->bold()->underline()->output('Downloads');
+    $padding = $climate->padding(35);
+    $padding->label('<yellow>Today</yellow>')->result(number_format($package['package']['downloads']['daily']));
+    $padding->label('<yellow>Last 30 days</yellow>')->result(number_format($package['package']['downloads']['monthly']));
+    $padding->label('<yellow>Total</yellow>')->result(number_format($package['package']['downloads']['total']));
 
-	$climate->br();
+    $climate->br();
 } catch (Exception $e) {
-	$climate->backgroundRed()->white()->output("No package called {$argv[1]} could be found.");
+    $climate->backgroundRed()->white()->output("No package called {$argv[1]} could be found.");
 }
-
