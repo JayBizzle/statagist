@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "68793fbddf13462fdf285b9b642992b6",
-    "content-hash": "628bd222e132a669cd1c4250c54cb897",
+    "hash": "75c3c4dfad0c24470c05ee50e1edf2ad",
+    "content-hash": "b6e721e51910c78aeb604af844dd3303",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -186,31 +186,32 @@
             "time": "2017-03-20 17:10:46"
         },
         {
-            "name": "kevinlebrun/colors.php",
-            "version": "1.0.2",
+            "name": "league/climate",
+            "version": "3.2.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/kevinlebrun/colors.php.git",
-                "reference": "6d7140aeedef46c97c2324f09b752c599ef17dac"
+                "url": "https://github.com/thephpleague/climate.git",
+                "reference": "b103fc8faa3780c802cc507d5f0ff534ecc94fb5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kevinlebrun/colors.php/zipball/6d7140aeedef46c97c2324f09b752c599ef17dac",
-                "reference": "6d7140aeedef46c97c2324f09b752c599ef17dac",
+                "url": "https://api.github.com/repos/thephpleague/climate/zipball/b103fc8faa3780c802cc507d5f0ff534ecc94fb5",
+                "reference": "b103fc8faa3780c802cc507d5f0ff534ecc94fb5",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0"
+                "php": ">=5.4.0",
+                "seld/cli-prompt": "~1.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "3.7.*",
-                "satooshi/php-coveralls": "1.0.*",
-                "squizlabs/php_codesniffer": "1.*"
+                "mikey179/vfsstream": "~1.4",
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4.6"
             },
             "type": "library",
             "autoload": {
-                "psr-0": {
-                    "Colors": "src/"
+                "psr-4": {
+                    "League\\CLImate\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -219,22 +220,21 @@
             ],
             "authors": [
                 {
-                    "name": "Kevin Le Brun",
-                    "email": "lebrun.k@gmail.com",
-                    "homepage": "http://kevinlebrun.fr",
-                    "role": "developer"
+                    "name": "Joe Tannenbaum",
+                    "email": "hey@joe.codes",
+                    "homepage": "http://joe.codes/",
+                    "role": "Developer"
                 }
             ],
-            "description": "Colors for PHP CLI scripts",
-            "homepage": "https://github.com/kevinlebrun/colors.php",
+            "description": "PHP's best friend for the terminal. CLImate allows you to easily output colored text, special formats, and more.",
             "keywords": [
                 "cli",
-                "color",
                 "colors",
-                "console",
-                "shell"
+                "command",
+                "php",
+                "terminal"
             ],
-            "time": "2016-04-12 20:58:34"
+            "time": "2016-04-04 20:24:59"
         },
         {
             "name": "psr/http-message",
@@ -285,6 +285,54 @@
                 "response"
             ],
             "time": "2016-08-06 14:39:51"
+        },
+        {
+            "name": "seld/cli-prompt",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Seldaek/cli-prompt.git",
+                "reference": "a19a7376a4689d4d94cab66ab4f3c816019ba8dd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Seldaek/cli-prompt/zipball/a19a7376a4689d4d94cab66ab4f3c816019ba8dd",
+                "reference": "a19a7376a4689d4d94cab66ab4f3c816019ba8dd",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Seld\\CliPrompt\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be"
+                }
+            ],
+            "description": "Allows you to prompt for user input on the command line, and optionally hide the characters they type",
+            "keywords": [
+                "cli",
+                "console",
+                "hidden",
+                "input",
+                "prompt"
+            ],
+            "time": "2017-03-18 11:32:45"
         },
         {
             "name": "spatie/packagist-api",

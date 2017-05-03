@@ -2,20 +2,27 @@
 
 require __DIR__.'/../vendor/autoload.php';
 
-$c = new \Colors\Color();
+$climate = new League\CLImate\CLImate;
+
 $packagist = new \Spatie\Packagist\Packagist(new \GuzzleHttp\Client());
 
-$package = $packagist->findPackageByName($argv[1]);
+if (empty($argv[1])) {
+	die($climate->backgroundRed()->white()->output("Please specify a package name"));
+}
 
-echo $c($argv[1])->white()->bold()->highlight('green') . PHP_EOL;
+try {
+	$package = $packagist->findPackageByName($argv[1]);
 
-echo $c('Downloads')->white()->bold() . PHP_EOL;
+	$climate->br()->green()->bold()->flank("{$argv[1]}");
 
-echo $c(' - Total: ')->yellow()->bold();
-echo $c($package['package']['downloads']['total'])->white()->bold() . PHP_EOL;
+	$climate->white()->bold()->underline()->output('Downloads');
+	$padding = $climate->padding(35);
+	$padding->label('<yellow>Today</yellow>')->result(number_format($package['package']['downloads']['daily']));
+	$padding->label('<yellow>Last 30 days</yellow>')->result(number_format($package['package']['downloads']['monthly']));
+	$padding->label('<yellow>Total</yellow>')->result(number_format($package['package']['downloads']['total']));
 
-echo $c(' - Monthly: ')->yellow()->bold();
-echo $c($package['package']['downloads']['monthly'])->white()->bold() . PHP_EOL;
+	$climate->br();
+} catch (Exception $e) {
+	$climate->backgroundRed()->white()->output("No package called {$argv[1]} could be found.");
+}
 
-echo $c(' - Daily: ')->yellow()->bold();
-echo $c($package['package']['downloads']['daily'])->white()->bold() . PHP_EOL;

@@ -9,7 +9,7 @@
     ],
     "require": {
         "spatie/packagist-api": "^1.0",
-        "kevinlebrun/colors.php": "^1.0"
+        "league/climate": "^3.2"
     },
     "bin": [
         "statagist"
