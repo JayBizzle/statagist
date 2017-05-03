@@ -10,6 +10,12 @@ if (empty($argv[1])) {
     die($climate->backgroundRed()->white()->output('Please specify a package name'));
 }
 
+if (strpos($argv[1], '/') === false) {
+    $options = $packagist->getPackagesByVendor($argv[1]);
+    $input = $climate->radio('Select a package:', $options['packageNames']);
+    $argv[1] = $input->prompt();
+}
+
 try {
     $package = $packagist->findPackageByName($argv[1]);
 
