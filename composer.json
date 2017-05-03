@@ -11,6 +11,11 @@
         "spatie/packagist-api": "^1.0",
         "league/climate": "^3.2"
     },
+    "autoload": {
+        "classmap": [
+            "src/Packagist.php"
+        ]
+    },
     "bin": [
         "statagist"
     ]

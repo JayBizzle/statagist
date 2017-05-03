@@ -4,7 +4,7 @@ require __DIR__.'/../vendor/autoload.php';
 
 $climate = new League\CLImate\CLImate;
 
-$packagist = new \Spatie\Packagist\Packagist(new \GuzzleHttp\Client());
+$packagist = new \Statagist\Packagist(new \GuzzleHttp\Client());
 
 if (empty($argv[1])) {
 	die($climate->backgroundRed()->white()->output("Please specify a package name"));
