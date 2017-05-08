@@ -9,6 +9,9 @@
 
 A simple CLI tool to quickly see package stats from Packagist.
 
+
+<img src="https://cloud.githubusercontent.com/assets/340752/25821122/cf68b1f0-342b-11e7-935b-eac5a47388af.png" alt="screen shot 2017-05-08 at 20 19 45" style="max-width:100%;">
+
 ## Installation
 
 ```
